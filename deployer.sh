@@ -27,8 +27,8 @@ echo "yes"
 sbt assembly
 cp target/scala-2.13/scala-assig-currency-converter-assembly-0.1.jar jarImage/ 
 cd jarImage/
-docker build . -t ksr30/currency-converter
-docker push ksr30/currency-converter
+sudo docker build . -t ksr30/currency-converter
+sudo docker push ksr30/currency-converter
 
 fi
 
