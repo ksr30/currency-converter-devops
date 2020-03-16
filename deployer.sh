@@ -1,6 +1,9 @@
 #!/bin/bash
 
-sbt clean compile coverage test coverageReport
+sbt clean 
+sbt compile 
+sbt coverage test 
+sbt coverageReport
 touch temp.txt
 xml2 < target/scala-2.12/scoverage-report/scoverage.xml > temp.txt
 
@@ -24,12 +27,11 @@ if [ $statementrate -lt 70 ]; then
 echo "no"
 else
 echo "yes"
-sbt assembly;
+sbt assembly
 cp target/scala-2.13/scala-assig-currency-converter-assembly-0.1.jar jarImage/ 
 cd jarImage/
 docker build . -t ksr30/currency-converter
 docker push ksr30/currency-converter
-
 fi
 
 
