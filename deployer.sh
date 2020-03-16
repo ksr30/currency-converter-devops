@@ -24,7 +24,7 @@ if [ $statementrate -lt 70 ]; then
 echo "no"
 else
 echo "yes"
-sbt assembly
+sbt assembly;
 cp target/scala-2.13/scala-assig-currency-converter-assembly-0.1.jar jarImage/ 
 cd jarImage/
 docker build . -t ksr30/currency-converter
